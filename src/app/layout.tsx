@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
+import { DM_Sans, Libre_Baskerville } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
 });
+
+const libre = Libre_Baskerville({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-serif",
+});
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -14,9 +21,9 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Zero Trust PHI Simulation | Zambia Healthcare Research",
+  title: "SmartCare Sim | Zero Trust PHI Research",
   description:
-    "SmartCare-inspired academic simulation comparing Traditional RBAC and Zero Trust for patient health information.",
+    "SmartCare-inspired research simulation: traditional login vs Zero Trust healthcare access for Zambia PHI.",
 };
 
 export default function RootLayout({
@@ -27,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${dmSans.variable} ${libre.variable} ${geistMono.variable} font-sans antialiased`}
       >
         {children}
       </body>

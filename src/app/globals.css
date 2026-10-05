@@ -3,21 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #f7f5f0;
+  --foreground: #1a202c;
+  --navy: #0a2e4a;
+  --cream: #f7f5f0;
+  --accent: #c45c3e;
+  --zt: #0d7a6f;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+.font-serif {
+  font-family: var(--font-serif), Georgia, serif;
 }
 
 @layer components {

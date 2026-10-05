@@ -14,7 +14,7 @@ import { TopologyView } from "./TopologyView";
 import { EventFeed } from "./EventFeed";
 import { PresentationMode } from "./PresentationMode";
 
-export function Dashboard() {
+export function Dashboard({ embedded = false }: { embedded?: boolean }) {
   const [params, setParams] = useState<SimulationParameters>(
     DEFAULT_SIMULATION_PARAMETERS
   );
@@ -44,19 +44,21 @@ export function Dashboard() {
 
   return (
     <div className="space-y-6">
-      <header className="border-b border-slate-800 pb-4">
-        <p className="text-xs uppercase tracking-widest text-teal-500 mb-1">
-          Research project simulation
-        </p>
-        <h1 className="text-2xl md:text-3xl font-bold text-slate-50">
-          Securing the Digital Pulse: Zero Trust for PHI (Zambia)
-        </h1>
-        <p className="text-slate-400 mt-2 max-w-3xl text-sm">
-          Compare Traditional Perimeter/RBAC vs context-aware Zero Trust under
-          configurable Zambia connectivity constraints. All metrics are computed
-          by the TypeScript experiment engine.
-        </p>
-      </header>
+      {!embedded && (
+        <header className="border-b border-slate-800 pb-4">
+          <p className="text-xs uppercase tracking-widest text-teal-500 mb-1">
+            Research project simulation
+          </p>
+          <h1 className="text-2xl md:text-3xl font-bold text-slate-50">
+            Securing the Digital Pulse: Zero Trust for PHI (Zambia)
+          </h1>
+          <p className="text-slate-400 mt-2 max-w-3xl text-sm">
+            Compare Traditional Perimeter/RBAC vs context-aware Zero Trust under
+            configurable Zambia connectivity constraints. All metrics are computed
+            by the TypeScript experiment engine.
+          </p>
+        </header>
+      )}
 
       <ResearchFrame />
       <ParameterControls
@@ -66,7 +68,7 @@ export function Dashboard() {
         running={running}
       />
       <TopologyView params={params} />
-      <PresentationMode params={params} />
+      {!embedded && <PresentationMode params={params} />}
 
       {result && (
         <section className="rounded-xl border border-slate-700 bg-slate-900/30 p-4 text-sm text-slate-300">
