@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Securing the Digital Pulse — Zero Trust PHI Simulation
 
 **SmartCare-inspired simulated healthcare environment for academic research.**  
