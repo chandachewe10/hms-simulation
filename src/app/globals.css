@@ -17,7 +17,19 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+@layer components {
+  .input {
+    @apply rounded-md border border-slate-600 bg-slate-950 px-2 py-1.5 text-slate-100 text-sm w-full;
+  }
+  .btn-primary {
+    @apply rounded-md bg-teal-600 hover:bg-teal-500 disabled:opacity-50 px-4 py-2 text-sm font-medium text-white;
+  }
+  .btn-secondary {
+    @apply rounded-md border border-slate-600 hover:bg-slate-800 px-3 py-2 text-sm text-slate-200;
+  }
 }
 
 @layer utilities {

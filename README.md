@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Securing the Digital Pulse — Zero Trust PHI Simulation
 
-## Getting Started
+**SmartCare-inspired simulated healthcare environment for academic research.**  
+This project does **not** reproduce SmartCare production architecture.
 
-First, run the development server:
+Master's research dashboard comparing **Traditional Perimeter/RBAC** and **context-aware Zero Trust** under configurable Zambia connectivity constraints (latency, packet loss, bandwidth).
+
+## Quick start
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Local development server |
+| `npm run build` | Production build (Vercel-compatible) |
+| `npm run test` | Vitest unit tests for the simulation engine |
 
-## Learn More
+## Architecture (`src/simulation/`)
 
-To learn more about Next.js, take a look at the following resources:
+| Module | Purpose |
+|--------|---------|
+| `users`, `devices`, `resources` | Synthetic healthcare population |
+| `authentication` | Password vs MFA + session checks |
+| `rbac` | Perimeter/RBAC authorization |
+| `zero-trust` | Continuous verification path |
+| `risk-engine`, `policy-engine` | 0–100 risk score and decisions |
+| `attacks` | Six scripted attack scenarios |
+| `network` | Zambia connectivity latency model |
+| `metrics`, `experiments` | Reproducible trials and CSV/JSON export |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Default experiment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- 100 users, 100 devices  
+- 1,000 legitimate + 200 malicious requests per trial  
+- 3 trials, seed `20261005`  
+
+All dashboard numbers originate from `runExperiment()` — nothing is hard-coded for effect.
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Connect this repository to Vercel; default Next.js settings apply. No server secrets required (simulation runs in the browser).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Research disclaimer
+
+Outcomes are **simulation results** for hypothesis exploration. Statistical significance is **not** claimed unless you extend the engine with formal tests and calibrated field data.
