@@ -46,7 +46,7 @@ export function Dashboard() {
     <div className="space-y-6">
       <header className="border-b border-slate-800 pb-4">
         <p className="text-xs uppercase tracking-widest text-teal-500 mb-1">
-          Master&apos;s research simulation
+          Research project simulation
         </p>
         <h1 className="text-2xl md:text-3xl font-bold text-slate-50">
           Securing the Digital Pulse: Zero Trust for PHI (Zambia)

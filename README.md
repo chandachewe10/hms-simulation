@@ -3,7 +3,7 @@
 **SmartCare-inspired simulated healthcare environment for academic research.**  
 This project does **not** reproduce SmartCare production architecture.
 
-Master's research dashboard comparing **Traditional Perimeter/RBAC** and **context-aware Zero Trust** under configurable Zambia connectivity constraints (latency, packet loss, bandwidth).
+Research project dashboard comparing **Traditional Perimeter/RBAC** and **context-aware Zero Trust** under configurable Zambia connectivity constraints (latency, packet loss, bandwidth).
 
 ## Quick start
 
