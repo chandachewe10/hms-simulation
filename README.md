@@ -14,6 +14,22 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+### Experience flow
+
+| Route | Purpose |
+|-------|---------|
+| `/` | Landing — how the simulation works, pick a login path |
+| `/login/traditional` | Legacy perimeter login (password only) |
+| `/login/zero-trust` | MFA + context-aware gateway |
+| `/portal/traditional` | Vulnerable EMR workspace + attack lab |
+| `/portal/zero-trust` | Protected workspace — attacks blocked by policy engine |
+| `/admin` | Analyst dashboard (batch metrics + live audit log) |
+
+**Demo credentials**
+
+- Traditional / Zero Trust user: `doctor` / `SmartCare2024` (Zero Trust MFA: `123456`)
+- Admin analyst: `analyst` / `Analyze@2024`
+
 ## Scripts
 
 | Command | Description |
